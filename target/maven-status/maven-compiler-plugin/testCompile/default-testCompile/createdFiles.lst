@@ -1,0 +1,5 @@
+com\flightRight\controller\MemberDetailsControllerTest.class
+com\flightRight\controller\mapper\MemberMapperTest.class
+com\flightRight\service\DefaultMemberServiceTest.class
+com\flightRight\FlightRightTestApplicationTests.class
+com\flightRight\ObjectInitializerForTest.class

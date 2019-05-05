@@ -1,0 +1,39 @@
+spring.profiles: h2
+database:
+  username: sa
+  password:
+  schemas:
+    default: PUBLIC
+    referential: PUBLIC
+    views: PUBLIC
+    bcr-tools: PUBLIC
+    technical: PUBLIC
+    tables: PUBLIC
+
+spring:
+  profiles:
+    active: h2
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  datasource:
+    url: jdbc:h2:file:./target/h2/taxi-api-api;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+    initialize: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+logging:
+  level:
+    org.springframework.jdbc.core.JdbcTemplate: debug
+---
+spring.profiles: cucumber
+spring.profiles.include: h2
+database:
+  sql:
+    locking_row_for_access:
+    replace_or_create: CREATE
+    if_exists: IF EXISTS
